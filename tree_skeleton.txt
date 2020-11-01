@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct player *createPlayer();
+void addInOrder();
+void showInOrder();
+
+int main() {
+    int ch;
+    struct player *temp,*root_ptr=NULL;
+   
+    do {
+        printf("\n--- Menu ");
+        printf("\n--- 1.Add player in order ");
+        printf("\n--- 2.Show players");
+        printf("\n--- 0.Exit ");
+        printf("\nChoice: ");
+        scanf("%d",&ch);
+        switch(ch) {
+        case 1: 
+            temp = createPlayer();
+            if (temp != NULL)
+                if (root_ptr == NULL)
+                    root_ptr = temp;
+                else
+                    addInOrder();
+            else
+                printf("No memory available!\n");
+            break;
+        case 2: 
+            printf("Tree contents:\n");
+            showInOrder();
+            break;
+        case 0:
+            printf("Bye!\n");
+            break;
+        default: 
+            printf("Try again.\n");
+            break;
+        } 
+    } while (ch!=0);
+    exit(0);
+}
+
+struct player *createPlayer() {
+   
+}
+
+void addInOrder(){
+  
+}
+
+void showInOrder(struct player *root_ptr){
+  
+}
